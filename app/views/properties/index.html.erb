@@ -1,0 +1,25 @@
+<div class container></div>
+<h3>Back to: <%= link_to 'List of Project', projects_path %></h3>
+<div class="container formstyle" align="center">
+  <h1>List of Property</h1>
+  <table >
+    <tr>
+      <th><h3>Property Name</h3></th>
+    <br/>
+    <% @properties.each do |property| %>
+      <tr>
+        <td><%= property.name %>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+        </td>
+        <td><%= link_to 'Show', property_path(property) %></td>
+        <td><% if property.user == current_user %>
+              <%= link_to 'Edit', edit_property_path(property) %></td>
+              <td><%= link_to 'Destroy', property_path(property),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+              </td>
+          <%end %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

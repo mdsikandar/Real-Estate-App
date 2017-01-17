@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  property_type: MyString
+  location: MyString
+  price: 1
+  area: 1
+  developer_name: MyString
+
+two:
+  property_type: MyString
+  location: MyString
+  price: 1
+  area: 1
+  developer_name: MyString

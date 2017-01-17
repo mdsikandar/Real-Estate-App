@@ -1,0 +1,28 @@
+<html>
+  <head>
+     <title>Common Floor</title>
+     <%= stylesheet_link_tag    'application', media: 'all' %>
+     <%= javascript_include_tag 'application' %>
+     <%= csrf_meta_tags %>
+     <link href="path/to/lightbox.css" rel="stylesheet">
+  </head>
+  <body>
+  <div class="container-fluid">
+  <%= render "layouts/navbar" %>
+   </div>
+     <div class="container">
+     <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+       <%= yield %>
+       <%= javascript_tag do %>
+         <%= yield :javascript %>
+       <% end %>
+       <footer class="rtpad" align= right>
+          <p></p>
+       </footer>
+      </div>
+      <div class="modal-container"></div>
+      <script src="path/to/lightbox.js"></script>
+   </body>
+</html>

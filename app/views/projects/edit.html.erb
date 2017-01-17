@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <h3>Back to: <%= link_to 'List of Projects', projects_path %></h3>
+  <div class="container formstyle" align="center">
+    <h1>Edit Project</h1><br/>
+    <%= form_for :project, url: project_path(@project), method: :patch do |f| %>
+      <% if @project.errors.full_messages.any? %>
+        <h2>Errors</h2>
+        <% @project.errors.full_messages.each do |error_message| %>
+        <%= error_message if @project.errors.full_messages.first == error_message %> <br />
+      <% end %>
+    <% end %><br/>
+      <p>
+        <%= f.label :property_type %>:
+        <%= select_tag(:property_id, options_for_select(@properties)) %>
+      </p>
+      <p>
+        <%= f.label :location %>:
+        <%= f.select :location, [ 'Mumbai', 'Delhi', 'Kolkata','Kota','Bangalore','Durgapur'], :prompt => 'Select One' %>
+      </p>
+      <p>
+        <%= f.label :price %> (&#x20B9;)<br>
+        <%= f.text_field :price %>
+      </p>
+      <p>
+        <%= f.label :area %> (in sqft)<br>
+        <%= f.text_field :area %>
+      </p>
+      <p>
+        <%= f.label :developer_name %><br>
+        <%= f.text_field :developer_name %>
+      </p>
+      <p>
+        <% if @project.image.exists? %>
+          <%= image_tag @project.image.url(:thumb) %><br/>
+          <%= f.check_box :delete_image %>Delete Image<br/>
+        <% end %>
+        <%= f.file_field :image %>
+      </p>  
+      <p>
+        <%= f.label :Status %><br>
+        <%= f.text_field :sold %>
+      </p>
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
+  </div>
+</div>

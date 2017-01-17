@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="container" align="right">
+    <%= form_tag(projects_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Projects" %>
+      <%= submit_tag "Search",:name => nil %>
+    <% end %>
+    <% if @projects.present? %>
+      <% @projects %>
+    <% else %>
+      <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+    <% end %>
+  </div>
+  <div class="container formstyle-2">
+    <h1>List of Projects</h1>
+    <table >
+      <tr class="botpad">
+        <th>Image &nbsp;</th>
+        <th>Property Type &nbsp;&nbsp;&nbsp;</th>
+        <th>Location &nbsp;</th>
+        <th>Price (&#x20B9;)&nbsp;</th>
+        <th>Area (in sqft)&nbsp;</th>
+        <th>Developer Name &nbsp;&nbsp;&nbsp;</th>
+        <th>Status&nbsp; &nbsp;</th>
+      </tr>
+      <% @projects.each do |project| %>
+        <tr>
+          <td ><%= image_tag project.image.url(:thumb) %></td>
+          <td><%= link_to Property.find(project.property_id).name, properties_path%>&nbsp; &nbsp; &nbsp;</td>
+          <td><%= project.location%>&nbsp; &nbsp; &nbsp;</td>
+          <td><%= project.price %>&nbsp; &nbsp; &nbsp;</td>
+          <td><%= project.area%>&nbsp;</td>
+          <td><%= project.developer_name %>&nbsp; &nbsp; &nbsp;</td>
+          <td><%= project.sold %>&nbsp;</td>
+          <td><h4 border :none>&nbsp; &nbsp; &nbsp;<%= link_to 'Show', project_path(project) %>&nbsp; &nbsp; &nbsp;
+          <% if project.user == current_user %>
+            <%= link_to 'Edit',edit_project_path(project) %>&nbsp; &nbsp;<%= link_to 'Destroy', project_path(project),method: :delete,data: { confirm: 'Are you sure?' } %></h4> 
+          <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,147 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+table { 
+    border-spacing: 10px;
+    border-collapse: separate;
+}
+
+.myButton {
+	background-color:#44c767;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+
+.bgcolur{
+	background-color:#FFFFFF;
+}
+.navbar-custom {
+    background-color:#308850;
+    color:#ffffff;
+    border-radius:0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:#fff;
+}
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color:transparent;
+}
+.navbar-custom .navbar-brand {
+    color:#eeeeee;
+}
+.formstyle{
+    font: 95% Arial, Helvetica, sans-serif;
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 16px;
+    background: #F7F7F7;
+}
+.formstyle h1{
+    background: #43D1AF;
+    padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    margin: -16px -16px 16px -16px;
+}
+.formstyle input[type="text"],
+.formstyle input[type="date"],
+.formstyle input[type="datetime"],
+.formstyle input[type="email"],
+.formstyle input[type="number"],
+.formstyle input[type="search"],
+.formstyle input[type="time"],
+.formstyle input[type="url"],
+.formstyle textarea,
+.formstyle select 
+{
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 4%;
+    border: 1px solid #ccc;
+    padding: 3%;
+    color: #555;
+    font: 95% Arial, Helvetica, sans-serif;
+}
+.formstyle input[type="text"]:focus,
+.formstyle input[type="date"]:focus,
+.formstyle input[type="datetime"]:focus,
+.formstyle input[type="email"]:focus,
+.formstyle input[type="number"]:focus,
+.formstyle input[type="search"]:focus,
+.formstyle input[type="time"]:focus,
+.formstyle input[type="url"]:focus,
+.formstyle textarea:focus,
+.formstyle select:focus
+{
+    box-shadow: 0 0 5px #43D1AF;
+    padding: 3%;
+    border: 1px solid #43D1AF;
+}
+
+.formstyle input[type="submit"],
+.formstyle input[type="button"]{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 3%;
+    background: #43D1AF;
+    border-bottom: 2px solid #30C29E;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;    
+    color: #fff;
+}
+.formstyle input[type="submit"]:hover,
+.formstyle input[type="button"]:hover{
+    background: #2EBC99;
+}
+
+.formstyle-2{
+    font: 95% Arial, Helvetica, sans-serif;
+    max-width: 1600px;
+    margin: 10px auto;
+    padding: 16px;
+    background: #F7F7F7;
+}
+.formstyle-2 h1{
+    background: #43D1AF;
+    padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    margin: -16px -16px 16px -16px;
+}
+
+.toppad{
+     padding-top: 15px;
+
+}
+.rtpad{
+    padding-right: 10px;
+}
+.botpad{
+    padding-bottom: 25px;
+}

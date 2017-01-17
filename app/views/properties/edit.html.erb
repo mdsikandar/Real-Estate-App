@@ -1,0 +1,19 @@
+<h3>Back to: <%= link_to 'Properties', properties_path %></h3>
+<div class="container formstyle" align="center">
+  <h1>Edit Property</h1><br/>
+  <%= form_for :property, url: property_path(@property), method: :patch do |f| %>
+    <% if @property.errors.full_messages.any? %>
+      <h2>Errors</h2>
+      <% @property.errors.full_messages.each do |error_message| %>
+      <%= error_message if @property.errors.full_messages.first == error_message %> <br />
+      <% end %>
+    <% end %><br/>
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+</div>

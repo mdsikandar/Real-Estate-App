@@ -1,0 +1,25 @@
+<div class="container-fluid">
+ <nav class="navbar navbar-default navbar-static-top navbar-custom ">
+   <div>
+      <div class="navbar-header">
+         <%= link_to "Home", root_path, class: "navbar-brand" %>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+         <li ><%= link_to 'List of Project', projects_path %></li>
+      	<li ><%= link_to 'New Project', new_project_path %></li>
+         <li ><%= link_to 'New property type', new_property_path %></li>
+         <% if user_signed_in? %>
+            <li class="toppad"><%= current_user.username %></li>
+            <li class="rtpad">
+               <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+            </li>
+         <% else %>
+            <li>
+               <li ><%= link_to 'Sign up ', new_user_registration_path %></li>
+               <li class="rtpad"><%= link_to 'Log in ', new_user_session_path %></li>
+            </li>
+         <% end %>
+      </ul>
+    </div>
+ </nav>
+</div>

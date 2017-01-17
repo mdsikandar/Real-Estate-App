@@ -1,0 +1,41 @@
+<h3>Back to: <%= link_to 'List of Projects', projects_path %></h3>
+
+<% if @project.user == current_user %>
+  <h3 align="right">       <%= link_to 'Edit',edit_project_path(@project) %>&nbsp; &nbsp;</h3>
+<% end %>
+<div class="container formstyle" align="center">
+ <h1>PROJECT</h1><br/>
+ <% if @project.image.exists? %>
+    <%= link_to (image_tag @project.image.url(:medium)), @project.image.url(:large)%>
+    <% else %>
+      <%= image_tag @project.image.url(:medium) %>
+  <% end %>
+
+  <p>
+    <strong>Location :</strong>
+    <%= @project.location %>
+  </p>
+  <p>
+    <strong>Price (&#x20B9;) :</strong>
+    <%= @project.price %>
+  </p>
+  <p>
+    <strong>Area (in sqft) :</strong>
+    <%= @project.area %>
+  </p>
+  <p>
+    <strong>Developer’s name / Owner’s :</strong>
+    <%= @project.developer_name%>
+  </p>
+  
+  <p><% if @project.sold.nil? %>
+        <strong>Status :</strong>
+        <%= @project.sold%>
+    <% end %>
+  </p>
+  <div align="center">
+   <h3><%= link_to "Interested :", controller: "projects", action: 
+    "send_order_mail", id: @project.id %></h3>
+  </div>
+</div>
+
