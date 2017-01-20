@@ -18,7 +18,7 @@ class Project < ApplicationRecord
     	@delete_image  = !value.to_i.zero?
   	end
 	def self.search(search)	
-  		joins(:property).where("location LIKE ? OR developer_name LIKE ? OR properties.name LIKE ? OR price LIKE ? OR area LIKE ?", "%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%")
+  		joins(:property).where("location ILIKE ? OR developer_name ILIKE ? OR properties.name ILIKE ? OR price ILIKE ? OR area ILIKE ?", "%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%")
 	end
 	
 end
